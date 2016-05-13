@@ -1,3 +1,4 @@
+package robotplayers;
 public interface Robot {
 	
 	String getAlliance();

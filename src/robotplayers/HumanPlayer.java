@@ -1,3 +1,4 @@
+package robotplayers;
 
 public class HumanPlayer implements Robot
 {
@@ -33,4 +34,34 @@ public class HumanPlayer implements Robot
 	}
 	
 	public boolean isHoldingBoulder()
+	{
+		return hasBoulder;
+	}
+	
+	public void launch()
+	{
+		//Implement later
+	}
+	
+	public double intakePower()
+	{
+		return 1.00;
+	}
+	
+	public double getRobotHeight()
+	{
+		return robotHeight;
+	}
+	
+	public boolean changeBoulderStat()
+	{
+		hasBoulder = !hasBoulder;
+		return hasBoulder;
+	}
+
+	public void launchBoulder()
+	{
+		// Implement later
+	}
+
 }
