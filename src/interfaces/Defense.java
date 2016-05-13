@@ -5,5 +5,6 @@ public interface Defense {
 	int getStrength();
 	boolean isBreached();
 	String getType();
+	void breach();
 
 }
