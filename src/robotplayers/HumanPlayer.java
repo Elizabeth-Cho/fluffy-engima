@@ -1,6 +1,8 @@
 package robotplayers;
 import java.awt.event.KeyEvent;
 
+import interfaces.Robot;
+
 public class HumanPlayer implements Robot
 {
 	String alliance;
@@ -34,7 +36,11 @@ public class HumanPlayer implements Robot
 		return alliance;
 	}
 	
-	public void move(KeyEvent e)
+	public void move()
+	{
+		
+	}
+	public void keyPressed(KeyEvent e)
 	{
 		int key = e.getKeyCode();
 		if (key == KeyEvent.VK_LEFT)
@@ -52,6 +58,27 @@ public class HumanPlayer implements Robot
 		if (key == KeyEvent.VK_UP)
 		{
 			dy--;
+		}
+	}
+	
+	public void keyReleased(KeyEvent e)
+	{
+		int key = e.getKeyCode();
+		if(key == KeyEvent.VK_LEFT)
+		{
+			dx = 0;
+		}
+		if(key == KeyEvent.VK_RIGHT)
+		{
+			dx = 0;
+		}
+		if(key == KeyEvent.VK_UP)
+		{
+			dy = 0;
+		}
+		if(key == KeyEvent.VK_DOWN)
+		{
+			dy = 0;
 		}
 	}
 	

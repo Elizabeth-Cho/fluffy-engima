@@ -13,6 +13,7 @@ public class Runnnnn {
 		System.out.println("Ramparts: " + ramparts.getStrength());
 		System.out.println("Rock Wall: " + rw.getStrength());
 		System.out.println("Rough Terrain: " + rt.getStrength());
+		
 	}
 
 }
