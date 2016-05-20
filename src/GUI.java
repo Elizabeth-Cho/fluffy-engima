@@ -10,8 +10,10 @@ import javax.swing.JPanel;
 public class GUI {
 
 	private JFrame frame;
-	private JButton button;
-	private JButton button2;
+	private JButton side1button1;
+	private JButton side1button2;
+	private JButton side2button1;
+	private JButton side2button2;
 	private JPanel cardPanel;
 	private JPanel buttonPanel;
 	
@@ -19,11 +21,11 @@ public class GUI {
 	public GUI(){
 		frame = new JFrame("Stronghold");
 		frame.setSize(800, 600);
-		frame.setLayout(new GridLayout(2,1));
+		frame.setLayout(new GridLayout(4, 2));
 		cardPanel = new JPanel();
 		buttonPanel = new JPanel();
-		button = new JButton("Test");
-		button2 = new JButton("Test 2");
+		side1button1 = new JButton("Ramparts
+		side1button2 = new JButton("Moat")
 		frame.add(cardPanel);
 		frame.add(buttonPanel);
 		buttonPanel.setLayout(new GridLayout(2,1));

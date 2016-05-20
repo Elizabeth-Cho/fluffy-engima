@@ -4,6 +4,8 @@ import interfaces.Defense;
 public class Runnnnn {
 	public static void main (String[] args)
 	{
+		new GUI();
+		
 		Defense moat = new Moat();
 		Defense ramparts = new Ramparts();
 		Defense rw = new RockWall();
