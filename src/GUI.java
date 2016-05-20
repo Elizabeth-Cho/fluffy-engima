@@ -17,7 +17,7 @@ public class GUI {
 	
 	
 	public GUI(){
-		frame = new JFrame("Brandon");
+		frame = new JFrame("Stronghold");
 		frame.setSize(800, 600);
 		frame.setLayout(new GridLayout(2,1));
 		cardPanel = new JPanel();
