@@ -1,3 +1,4 @@
+package gamepieces;
 public class Boulder {
 	
 	private boolean isThrown;
