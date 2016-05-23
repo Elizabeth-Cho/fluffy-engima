@@ -31,7 +31,14 @@ public class Ramparts implements Defense{
 
 	@Override
 	public void breach() {
-		//Implement later
+		if (strength > 0)
+		{
+			strength--;
+		}
+		else
+		{
+			System.out.println("The ramparts cannot be damaged any further");
+		}
 	}
 
 }
