@@ -4,7 +4,9 @@ import interfaces.Defense;
 public class Runnnnn {
 	public static void main (String[] args)
 	{
-		Defense moat = new Moat();
+		new GUITest();
+		
+		/*Defense moat = new Moat();
 		Defense ramparts = new Ramparts();
 		Defense rw = new RockWall();
 		Defense rt = new RoughTerrain();
@@ -12,7 +14,7 @@ public class Runnnnn {
 		System.out.println("Moat: " + moat.getStrength());
 		System.out.println("Ramparts: " + ramparts.getStrength());
 		System.out.println("Rock Wall: " + rw.getStrength());
-		System.out.println("Rough Terrain: " + rt.getStrength());
+		System.out.println("Rough Terrain: " + rt.getStrength());*/
 		
 	}
 

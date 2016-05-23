@@ -6,26 +6,34 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class GUI {
+import defenses.Moat;
+import defenses.RockWall;
+import interfaces.Defense;
+
+public class GUITest {
 
 	private JFrame frame;
 	private JButton button;
 	private JButton button2;
 	private JPanel cardPanel;
 	private JPanel buttonPanel;
+	Defense moat;
+	Defense rockwall;
 	
 	
-	public GUI(){
-		frame = new JFrame("Brandon");
+	public GUITest(){
+		moat = new Moat();
+		rockwall = new RockWall();
+		frame = new JFrame("Test Stuff for the Sapo");
 		frame.setSize(800, 600);
 		frame.setLayout(new GridLayout(2,1));
 		cardPanel = new JPanel();
 		buttonPanel = new JPanel();
-		button = new JButton("Test");
-		button2 = new JButton("Test 2");
+		button = new JButton("Damage Moat");
+		button2 = new JButton("Damage Rock Wall");
 		frame.add(cardPanel);
 		frame.add(buttonPanel);
-		buttonPanel.setLayout(new GridLayout(2,1));
+		buttonPanel.setLayout(new GridLayout(3,1));
 		buttonPanel.add(button);
 		buttonPanel.add(button2);
 		button.addActionListener(new Listener());
@@ -42,10 +50,14 @@ public class GUI {
 		public void actionPerformed(ActionEvent e) {
 			Object x = e.getSource();
 			if(x == button){
-				System.out.println("hello");
+				moat.breach();
+				moat.isBreached();
+				//System.out.println("hello");
 			}
 			else if(x == button2){
-				System.out.println("Hi");
+				rockwall.breach();
+				rockwall.isBreached();
+				//System.out.println("Hi");
 			}
 			
 		}

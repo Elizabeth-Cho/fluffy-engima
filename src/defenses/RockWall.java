@@ -21,7 +21,15 @@ public class RockWall implements Defense{
 
 	@Override
 	public boolean isBreached() {
-		return (strength > 0);
+		if (strength > 0)
+		{
+			return false;
+		}
+		else
+		{
+			System.out.println("Rock wall has been breached.");
+			return true;
+		}
 	}
 
 	@Override
@@ -31,7 +39,14 @@ public class RockWall implements Defense{
 
 	@Override
 	public void breach() {
-		//Implement later
+		if (strength > 0)
+		{
+			strength--;
+		}
+		else
+		{
+			System.out.println("The moat cannot be damaged any further");
+		}
 	}
 
 }
