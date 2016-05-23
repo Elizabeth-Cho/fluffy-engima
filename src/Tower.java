@@ -12,5 +12,13 @@ public class Tower {
 		boulders = new ArrayList<Boulder>();
 	}
 	
+	public int getStrength()
+	{
+		return strength - boulders.size();
+	}
 	
+	public void itGotHit()
+	{
+		boulders.add(new Boulder());
+	}
 }

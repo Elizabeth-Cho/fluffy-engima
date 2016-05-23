@@ -41,50 +41,8 @@ public class HumanPlayer implements Robot
 	
 	public void move()
 	{
-		
+		System.out.println("Vroom vroom");
 	}
-	public void keyPressed(KeyEvent e)
-	{
-		int key = e.getKeyCode();
-		if (key == KeyEvent.VK_LEFT)
-		{
-			dx--;
-		}
-		if (key == KeyEvent.VK_RIGHT)
-		{
-			dx++;
-		}
-		if (key == KeyEvent.VK_DOWN)
-		{
-			dy++;
-		}
-		if (key == KeyEvent.VK_UP)
-		{
-			dy--;
-		}
-	}
-	
-	public void keyReleased(KeyEvent e)
-	{
-		int key = e.getKeyCode();
-		if(key == KeyEvent.VK_LEFT)
-		{
-			dx = 0;
-		}
-		if(key == KeyEvent.VK_RIGHT)
-		{
-			dx = 0;
-		}
-		if(key == KeyEvent.VK_UP)
-		{
-			dy = 0;
-		}
-		if(key == KeyEvent.VK_DOWN)
-		{
-			dy = 0;
-		}
-	}
-	
 	public boolean isHoldingBoulder()
 	{
 		return hasBoulder;
