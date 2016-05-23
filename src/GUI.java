@@ -1,3 +1,5 @@
+import interfaces.Defense;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -5,6 +7,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import defenses.Moat;
+import defenses.Ramparts;
+import defenses.RockWall;
+import defenses.RoughTerrain;
 
 
 public class GUI {
@@ -16,31 +23,70 @@ public class GUI {
 	private JButton side1button4;
 	private JButton side2button1;
 	private JButton side2button2;
+	private JButton side2button3;
+	private JButton side2button4;
 	private JPanel cardPanel;
 	private JPanel buttonPanel;
+	Defense ramparts;
+	Defense moat;
+	Defense roughterrain;
+	Defense rockwall;
+	Defense ramparts2;
+	Defense moat2;
+	Defense roughterrain2;
+	Defense rockwall2;
+	
 	
 	
 	public GUI(){
+		ramparts = new Ramparts();
+		moat = new Moat();
+		roughterrain = new RoughTerrain();
+		rockwall = new RockWall();
+		ramparts2 = new Ramparts();
+		moat2 = new Moat();
+		roughterrain2 = new RoughTerrain();
+		rockwall2 = new RockWall();
+		
+		
 		frame = new JFrame("Stronghold");
 		frame.setSize(800, 600);
-		frame.setLayout(new GridLayout(4, 2));
+		frame.setLayout(new GridLayout(8, 8));
 		cardPanel = new JPanel();
 		buttonPanel = new JPanel();
 		side1button1 = new JButton("Ramparts");
 		side1button2 = new JButton("Moat");
+		side1button3 = new JButton("Rought Terrain");
+		side1button4 = new JButton("Rock Wall");
+		
+		side2button1 = new JButton("Ramparts");
+		side2button2 = new JButton("Moat");
+		side2button3 = new JButton("Rought Terrain");
+		side2button4 = new JButton("Rock Wall");
 		
 		frame.add(cardPanel);
 		frame.add(buttonPanel);
-		buttonPanel.setLayout(new GridLayout(4, 1));
+		buttonPanel.setLayout(new GridLayout(2, 4));
 		buttonPanel.add(side1button1);
 		buttonPanel.add(side1button2);
 		buttonPanel.add(side1button3);
 		buttonPanel.add(side1button4);
 		
+		cardPanel.setLayout(new GridLayout(2, 4));
+		cardPanel.add(side2button1);
+		cardPanel.add(side2button2);
+		cardPanel.add(side2button3);
+		cardPanel.add(side2button4);
+		
 		side1button1.addActionListener(new Listener());
 		side1button2.addActionListener(new Listener());
+		side1button3.addActionListener(new Listener());
+		side1button4.addActionListener(new Listener());
 		
-		
+		side2button1.addActionListener(new Listener());
+		side2button2.addActionListener(new Listener());
+		side2button3.addActionListener(new Listener());
+		side2button4.addActionListener(new Listener());
 		
 		buttonPanel.setVisible(true);
 		cardPanel.setVisible(true);
@@ -53,11 +99,42 @@ public class GUI {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Object x = e.getSource();
+			
 			if(x == side1button1){
-				System.out.println("hello");
+				ramparts.breach();
+				ramparts.isBreached();
+				
 			}
 			else if(x == side1button2){
-				System.out.println("Hi");
+				moat.breach();
+				moat.isBreached();
+			}
+			else if(x == side1button3){
+				roughterrain.breach();
+				roughterrain.isBreached();
+			}
+			
+			else if(x == side1button4){
+				rockwall.breach();
+				rockwall.isBreached();
+			}
+			
+			else if (x == side2button1){
+				ramparts2.breach();
+				ramparts2.isBreached();
+			}
+			else if(x == side2button2){
+				moat2.breach();
+				moat2.isBreached();
+			}
+			else if(x == side2button3){
+				roughterrain2.breach();
+				roughterrain2.isBreached();
+			}
+			
+			else if(x == side2button4){
+				rockwall2.breach();
+				rockwall2.isBreached();
 			}
 			
 		}
