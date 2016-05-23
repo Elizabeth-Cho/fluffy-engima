@@ -1,6 +1,8 @@
 package robotplayers;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
+import gamepieces.Boulder;
 import interfaces.Robot;
 
 public class HumanPlayer implements Robot
@@ -9,6 +11,7 @@ public class HumanPlayer implements Robot
 	double robotHeight;
 	int teamNumber;
 	boolean hasBoulder;
+	ArrayList<Boulder> boulders;
 	private int dx;
 	private int dy;
 	
@@ -108,9 +111,15 @@ public class HumanPlayer implements Robot
 		return hasBoulder;
 	}
 
+	public void pickUpBoulder()
+	{
+		boulders.add(new Boulder());
+	}
+	
 	public void launchBoulder()
 	{
-		// Implement later
+		boulders.remove(0);
+		boulders.get(0).throwIt();
 	}
 
 }

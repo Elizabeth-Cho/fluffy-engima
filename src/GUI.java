@@ -12,6 +12,8 @@ public class GUI {
 	private JFrame frame;
 	private JButton side1button1;
 	private JButton side1button2;
+	private JButton side1button3;
+	private JButton side1button4;
 	private JButton side2button1;
 	private JButton side2button2;
 	private JPanel cardPanel;
@@ -29,9 +31,12 @@ public class GUI {
 		
 		frame.add(cardPanel);
 		frame.add(buttonPanel);
-		buttonPanel.setLayout(new GridLayout(2, 1));
+		buttonPanel.setLayout(new GridLayout(4, 1));
 		buttonPanel.add(side1button1);
 		buttonPanel.add(side1button2);
+		buttonPanel.add(side1button3);
+		buttonPanel.add(side1button4);
+		
 		side1button1.addActionListener(new Listener());
 		side1button2.addActionListener(new Listener());
 		
