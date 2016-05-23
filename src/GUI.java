@@ -24,15 +24,19 @@ public class GUI {
 		frame.setLayout(new GridLayout(4, 2));
 		cardPanel = new JPanel();
 		buttonPanel = new JPanel();
-		side1button1 = new JButton("Ramparts
-		side1button2 = new JButton("Moat")
+		side1button1 = new JButton("Ramparts");
+		side1button2 = new JButton("Moat");
+		
 		frame.add(cardPanel);
 		frame.add(buttonPanel);
-		buttonPanel.setLayout(new GridLayout(2,1));
-		buttonPanel.add(button);
-		buttonPanel.add(button2);
-		button.addActionListener(new Listener());
-		button2.addActionListener(new Listener());
+		buttonPanel.setLayout(new GridLayout(2, 1));
+		buttonPanel.add(side1button1);
+		buttonPanel.add(side1button2);
+		side1button1.addActionListener(new Listener());
+		side1button2.addActionListener(new Listener());
+		
+		
+		
 		buttonPanel.setVisible(true);
 		cardPanel.setVisible(true);
 		frame.setVisible(true);
@@ -44,10 +48,10 @@ public class GUI {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Object x = e.getSource();
-			if(x == button){
+			if(x == side1button1){
 				System.out.println("hello");
 			}
-			else if(x == button2){
+			else if(x == side1button2){
 				System.out.println("Hi");
 			}
 			
