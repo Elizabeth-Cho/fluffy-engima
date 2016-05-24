@@ -1,5 +1,4 @@
 package robotplayers;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import gamepieces.Boulder;
@@ -46,11 +45,6 @@ public class HumanPlayer implements Robot
 	public boolean isHoldingBoulder()
 	{
 		return hasBoulder;
-	}
-	
-	public void launch()
-	{
-		//Implement later
 	}
 	
 	public double intakePower()

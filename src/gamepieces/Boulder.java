@@ -13,4 +13,9 @@ public class Boulder {
 		isThrown = !isThrown;
 		return isThrown;
 	}
+	
+	public boolean getStat()
+	{
+		return isThrown;
+	}
 }

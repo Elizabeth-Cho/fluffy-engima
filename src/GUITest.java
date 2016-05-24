@@ -25,6 +25,7 @@ public class GUITest {
 	private JButton right;
 	
 	private JButton horn;
+	private JButton pushit;
 	
 	private JPanel cardPanel;
 	private JPanel buttonPanel;
@@ -71,11 +72,13 @@ public class GUITest {
 		button3.addActionListener(new Listener());
 		
 		horn = new JButton("HORN");
+		pushit = new JButton("lol I dare you boi");
 		up = new JButton("Up");
 		down = new JButton("Down");
 		left = new JButton("Left");
 		right = new JButton("Right");		
 		movementPanel.setLayout(new GridLayout(3, 3));
+		movementPanel.add(pushit);
 		movementPanel.add(horn);
 		movementPanel.add(up);
 		movementPanel.add(down);
@@ -86,6 +89,7 @@ public class GUITest {
 		left.addActionListener(new Listener());
 		right.addActionListener(new Listener());
 		horn.addActionListener(new Listener());
+		pushit.addActionListener(new Listener());
 		
 		buttonPanel.setVisible(true);
 		movementPanel.setVisible(true);
@@ -157,7 +161,11 @@ public class GUITest {
 				{
 					System.out.println("It's all rainbows and unihorns");
 				}
-					
+				System.out.println("lolololololololololololololololololololololololol");	
+			}
+			else if(x == pushit)
+			{
+				System.out.println("Don't do it. Bad. Go away.");
 			}
 			
 		}
