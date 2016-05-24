@@ -17,7 +17,7 @@ public class HumanPlayer implements Robot
 	public HumanPlayer()
 	{
 		alliance = "blue";
-		robotHeight = 69.0;
+		robotHeight = 24.0;
 		teamNumber = 178;
 		hasBoulder = false;
 	}
