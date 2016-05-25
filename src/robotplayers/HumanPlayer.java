@@ -65,7 +65,14 @@ public class HumanPlayer implements Robot
 
 	public void pickUpBoulder()
 	{
-		boulders.add(new Boulder());
+		if (boulders.size() == 0)
+		{
+			boulders.add(new Boulder());
+		}
+		else
+		{
+			System.out.println("The robot can't pick up any more boulders.");
+		}
 	}
 	
 	public void launchBoulder()

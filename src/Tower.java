@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import gamepieces.Boulder;
 
 public class Tower {
-	int strength;
+	private int strength;
 	ArrayList<Boulder> boulders;
 	
 	public Tower()
@@ -15,6 +15,11 @@ public class Tower {
 	public int getStrength()
 	{
 		return strength - boulders.size();
+	}
+	
+	public int getNumBoulders()
+	{
+		return boulders.size();
 	}
 	
 	public void itGotHit()
