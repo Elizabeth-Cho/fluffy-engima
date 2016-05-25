@@ -1,5 +1,4 @@
 package robotplayers;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import gamepieces.Boulder;
@@ -18,7 +17,7 @@ public class HumanPlayer implements Robot
 	public HumanPlayer()
 	{
 		alliance = "blue";
-		robotHeight = 69.0;
+		robotHeight = 24.0;
 		teamNumber = 178;
 		hasBoulder = false;
 	}
@@ -41,58 +40,11 @@ public class HumanPlayer implements Robot
 	
 	public void move()
 	{
-		
+		System.out.println("Vroom vroom");
 	}
-	public void keyPressed(KeyEvent e)
-	{
-		int key = e.getKeyCode();
-		if (key == KeyEvent.VK_LEFT)
-		{
-			dx--;
-		}
-		if (key == KeyEvent.VK_RIGHT)
-		{
-			dx++;
-		}
-		if (key == KeyEvent.VK_DOWN)
-		{
-			dy++;
-		}
-		if (key == KeyEvent.VK_UP)
-		{
-			dy--;
-		}
-	}
-	
-	public void keyReleased(KeyEvent e)
-	{
-		int key = e.getKeyCode();
-		if(key == KeyEvent.VK_LEFT)
-		{
-			dx = 0;
-		}
-		if(key == KeyEvent.VK_RIGHT)
-		{
-			dx = 0;
-		}
-		if(key == KeyEvent.VK_UP)
-		{
-			dy = 0;
-		}
-		if(key == KeyEvent.VK_DOWN)
-		{
-			dy = 0;
-		}
-	}
-	
 	public boolean isHoldingBoulder()
 	{
 		return hasBoulder;
-	}
-	
-	public void launch()
-	{
-		//Implement later
 	}
 	
 	public double intakePower()
@@ -113,7 +65,14 @@ public class HumanPlayer implements Robot
 
 	public void pickUpBoulder()
 	{
-		boulders.add(new Boulder());
+		if (boulders.size() == 0)
+		{
+			boulders.add(new Boulder());
+		}
+		else
+		{
+			System.out.println("The robot can't pick up any more boulders.");
+		}
 	}
 	
 	public void launchBoulder()
