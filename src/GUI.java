@@ -27,6 +27,9 @@ public class GUI {
 	private JButton side2button4;
 	private JPanel cardPanel;
 	private JPanel buttonPanel;
+	private JPanel anotherPanel1;
+	private JPanel anotherPanel2;
+	private JPanel anotherPanel3;
 	Defense ramparts;
 	Defense moat;
 	Defense roughterrain;
@@ -51,28 +54,36 @@ public class GUI {
 		
 		frame = new JFrame("Stronghold");
 		frame.setSize(800, 600);
-		frame.setLayout(new GridLayout(8, 8));
+		frame.setLayout(new GridLayout(1, 5));
 		cardPanel = new JPanel();
 		buttonPanel = new JPanel();
+		anotherPanel1 = new JPanel ();
+		anotherPanel2 = new JPanel ();		
+		anotherPanel3 = new JPanel ();
+		
 		side1button1 = new JButton("Ramparts");
 		side1button2 = new JButton("Moat");
-		side1button3 = new JButton("Rought Terrain");
+		side1button3 = new JButton("Rough Terrain");
 		side1button4 = new JButton("Rock Wall");
 		
 		side2button1 = new JButton("Ramparts");
 		side2button2 = new JButton("Moat");
-		side2button3 = new JButton("Rought Terrain");
+		side2button3 = new JButton("Rough Terrain");
 		side2button4 = new JButton("Rock Wall");
 		
+		frame.add(anotherPanel1);
 		frame.add(cardPanel);
+		frame.add(anotherPanel2);
 		frame.add(buttonPanel);
-		buttonPanel.setLayout(new GridLayout(2, 4));
+		frame.add(anotherPanel3);
+		
+		buttonPanel.setLayout(new GridLayout(4, 1));
 		buttonPanel.add(side1button1);
 		buttonPanel.add(side1button2);
 		buttonPanel.add(side1button3);
 		buttonPanel.add(side1button4);
 		
-		cardPanel.setLayout(new GridLayout(2, 4));
+		cardPanel.setLayout(new GridLayout(4, 1));
 		cardPanel.add(side2button1);
 		cardPanel.add(side2button2);
 		cardPanel.add(side2button3);
