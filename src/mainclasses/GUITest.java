@@ -1,3 +1,4 @@
+package mainclasses;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,6 +9,7 @@ import javax.swing.JPanel;
 
 import defenses.Moat;
 import defenses.RockWall;
+import gamepieces.Tower;
 import interfaces.Defense;
 import robotplayers.HumanPlayer;
 

@@ -1,6 +1,5 @@
+package gamepieces;
 import java.util.ArrayList;
-
-import gamepieces.Boulder;
 
 public class Tower {
 	private int strength;

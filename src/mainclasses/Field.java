@@ -1,3 +1,5 @@
+package mainclasses;
+
 import java.util.ArrayList;
 
 import defenses.*;
@@ -8,16 +10,23 @@ import robotplayers.*;
 public class Field {
 	ArrayList<Boulder> fieldBoulders;
 	ArrayList<Boulder> towerBoulders;
-	Defense a;
-	Defense b;
+	Defense moat;
+	Defense ramparts;
+	Defense rockwall;
+	Defense roughterrain;
 	Tower tower;
 	Boulder boulder;
 	
 	public Field()
 	{
 		fieldBoulders = new ArrayList<Boulder>();
-		a = new Moat(); //Change to options later
-		b = new RockWall(); //Same with this one
+		towerBoulders = new ArrayList<Boulder>();
+		moat = new Moat();
+		ramparts = new Ramparts();
+		rockwall = new RockWall();
+		roughterrain = new RoughTerrain();
+		tower = new Tower();
+		boulder = new Boulder();
 	}
 	
 	
