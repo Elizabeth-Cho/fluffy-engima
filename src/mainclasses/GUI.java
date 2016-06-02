@@ -1,9 +1,12 @@
 package mainclasses;
 import interfaces.Defense;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,6 +17,8 @@ import defenses.Ramparts;
 import defenses.RockWall;
 import defenses.RoughTerrain;
 
+import javax.swing.*;
+import javax.swing.JFrame;
 
 public class GUI {
 
@@ -104,7 +109,7 @@ public class GUI {
 		cardPanel.setVisible(true);
 		frame.setVisible(true);
 	}
-	
+
 	
 	private class Listener implements ActionListener{
 
@@ -150,7 +155,48 @@ public class GUI {
 			}
 			
 		}
+	
 		
-	}
+		
+		
+		
+		public class MovObj extends JPanel implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent f) {
+			
+				Timer t = new Timer(5, this);
+				double x = 0, y = 0, velX = 2, velY = 2;
+				
+				public void paintComponent (Graphics g){
+					super.paintComponent(g);
+					Graphics2D g2 = (Graphics2D) g;
+					Ellipse2D circle = new Ellipse2D.Double (x, y, 40, 40);
+					g2.fill(circle);
+					t.start();
+				}
+				
+				public void actionPerformed2 (ActionEvent e){
+					x += velX;
+					y += velY;
+					repaint();
+				}
+				
+			}	
+			
+		}
+		
+		
+		/*public class Macheads{
+			public static void main (String args[]){
+			second s = new second();
+			JFrame f = new JFrame();
+			f.add(s);
+			f.setVisibile
+			}
+		}*/
+
+		
+	
 	
 }
