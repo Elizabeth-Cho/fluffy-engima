@@ -80,5 +80,10 @@ public class HumanPlayer implements Robot
 		boulders.remove(0);
 		boulders.get(0).throwIt();
 	}
+	
+	public int getBoulders()
+	{
+		return boulders.size();
+	}
 
 }
