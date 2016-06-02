@@ -161,12 +161,21 @@ public class GUI {
 		
 		
 		public class MovObj extends JPanel implements ActionListener{
-
-			@Override
+			
+			Timer t;
+			double x;
+			double y;
+			double velX;
+			double velY;
+			
 			public void actionPerformed(ActionEvent f) {
 			
 				Timer t = new Timer(5, this);
-				double x = 0, y = 0, velX = 2, velY = 2;
+				double x = 0;
+				double y = 0;
+				double velX = 2;
+				double velY = 2;
+				}
 				
 				public void paintComponent (Graphics g){
 					super.paintComponent(g);
