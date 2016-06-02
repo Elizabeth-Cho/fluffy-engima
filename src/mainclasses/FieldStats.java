@@ -58,6 +58,7 @@ public class FieldStats {
 	{
 		int midScore = getMidScore();
 		int towerScore;
+		int breachScore;
 		if(towerStrength <= 0)
 		{
 			towerScore = 10;
@@ -65,6 +66,14 @@ public class FieldStats {
 		else
 		{
 			towerScore = 0;
+		}
+		if(field.canBeCaptured())
+		{
+			breachScore = 25;
+		}
+		else
+		{
+			breachScore = 0;
 		}
 		return midScore + towerScore;
 	}

@@ -58,6 +58,23 @@ public class Field {
 		last.add(first.remove(0));
 	}
 	
+	public boolean canBeCaptured()
+	{
+		
+		return getBreached() >= 3;
+	}
 	
+	public int getBreached()
+	{
+		int numBreached = 0;
+		for(int i = 0; i < defenses.size(); i++)
+		{
+			if(defenses.get(i).isBreached())
+			{
+				numBreached++;
+			}
+		}
+		return numBreached;
+	}
 
 }
