@@ -9,8 +9,8 @@ public class RunnnnnTestSapo {
 		
 		//Defense moat = new Moat();
 
-		//new GUITest();
-		new Board();
+		new GUITest();
+		//new Board();
 		/*Defense moat = new Moat();
 		Defense ramparts = new Ramparts();
 		Defense rw = new RockWall();

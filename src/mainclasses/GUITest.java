@@ -1,8 +1,14 @@
 package mainclasses;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -33,6 +39,8 @@ public class GUITest {
 	private JPanel buttonPanel;
 	private JPanel movementPanel;
 	
+	private ImageIcon image;
+	
 	Defense moat;
 	Defense rockwall;
 	Tower tower;
@@ -46,10 +54,13 @@ public class GUITest {
 		tower = new Tower();
 		vroomvroom = new HumanPlayer();
 		
+		
 		//GUI components
 		frame = new JFrame("Test Stuff for the Sapo");
 		frame.setSize(800, 600);
 		frame.setLayout(new GridLayout(3,1));
+		frame.setBackground(Color.green);
+		//cardPanel.setBackground(Color.green);
 		
 		/*cardPanel.setLayout(new GridLayout(1,1));
 		cardPanel.add(horn);*/
@@ -73,25 +84,32 @@ public class GUITest {
 		button2.addActionListener(new Listener());
 		button3.addActionListener(new Listener());
 		
-		horn = new JButton("HORN");
-		pushit = new JButton("lol I dare you boi");
+		//horn = new JButton("HORN");
+		//pushit = new JButton("lol I dare you boi");
 		up = new JButton("Up");
 		down = new JButton("Down");
 		left = new JButton("Left");
 		right = new JButton("Right");		
 		movementPanel.setLayout(new GridLayout(3, 3));
-		movementPanel.add(pushit);
-		movementPanel.add(horn);
+		//movementPanel.add(pushit);
+		//movementPanel.add(horn);
 		movementPanel.add(up);
 		movementPanel.add(down);
 		movementPanel.add(left);
-		movementPanel.add(right);
+		//movementPanel.add(right);
 		up.addActionListener(new Listener());
 		down.addActionListener(new Listener());
 		left.addActionListener(new Listener());
-		right.addActionListener(new Listener());
-		horn.addActionListener(new Listener());
-		pushit.addActionListener(new Listener());
+		//right.addActionListener(new Listener());
+		//horn.addActionListener(new Listener());
+		//pushit.addActionListener(new Listener());
+		
+		try {
+			BufferedImage image = ImageIO.read(new File("/images.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		buttonPanel.setVisible(true);
 		movementPanel.setVisible(true);
@@ -148,7 +166,7 @@ public class GUITest {
 				System.out.println("Robot has moved right");
 				vroomvroom.move();
 			}
-			else if(x == horn)
+			/*else if(x == horn)
 			{
 				int random = (int)(Math.random() * 50);
 				if (0 < random && random < 25)
@@ -168,7 +186,7 @@ public class GUITest {
 			else if(x == pushit)
 			{
 				System.out.println("Don't do it. Bad. Go away.");
-			}
+			}*/
 			
 		}
 		
