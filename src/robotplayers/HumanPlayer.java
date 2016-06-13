@@ -33,7 +33,7 @@ public class HumanPlayer implements Robot
 	
 	public void initRobot()
 	{
-		ImageIcon ii = new ImageIcon("robot.jpg");
+		ImageIcon ii = new ImageIcon("/images/robot.jpg");
 		image = ii.getImage();
 		x = 40;
 		y = 60;
