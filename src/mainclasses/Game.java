@@ -18,8 +18,6 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import robotplayers.HumanPlayer;
-import robotplayers.Robot;
-
 
 public class Game{
 
@@ -36,16 +34,19 @@ public class Game{
 	private JPanel bufferB;
 	private JLabel towerA;
 	private JLabel towerB;
+	private JLabel towerC;
 	private JLabel towers;
 	private JLabel heresGrass;
 	private JLabel moreGrass;
+	private JLabel wowGrass;
+	private JLabel grass1, grass2, grass3, grass4;
 	private ImageIcon towerWall;
 	private ImageIcon bRW;
 	private ImageIcon bMoat;
 	private ImageIcon bRT;
 	private ImageIcon bRamparts;
 	private ImageIcon robot;
-	private Color grass;
+	private Color grass, dGrass;
 	private Graphics2D g2d;
 	
 	public Game(){
@@ -59,6 +60,7 @@ public class Game{
 		bufferA = new JPanel();
 		bufferB = new JPanel();
 		grass = new Color(0, 128, 0);
+		dGrass = new Color(0, 118, 0);
 		
 		bRW = createImageIcon("/images/rockwall.png", "rock wall");
 		bMoat = createImageIcon("/images/Water Game.jpg", "moat");
@@ -74,9 +76,10 @@ public class Game{
 		frame.add(bufferB);
 		
 		
-		tower.setLayout(new GridLayout(3,1));
+		tower.setLayout(new GridLayout(4,1));
 		defense.setLayout(new GridLayout(4,1));
-		bufferA.setLayout(new GridLayout(3,1));
+		bufferA.setLayout(new GridLayout(4,1));
+		bufferB.setLayout(new GridLayout(4,1));
 		
 		rw = new JButton(bRW);
 		rt = new JButton(bRT);
@@ -87,8 +90,14 @@ public class Game{
 		towerA = new JLabel(towerWall);
 		towers = new JLabel(towerWall);
 		towerB = new JLabel(towerWall);
+		towerC = new JLabel(towerWall);
 		heresGrass = new JLabel();
 		moreGrass = new JLabel();
+		wowGrass = new JLabel();
+		grass1 = new JLabel();
+		grass2 = new JLabel();
+		grass3 = new JLabel();
+		grass4 = new JLabel();
 		
 		rw.setBackground(grass);
 		rt.setBackground(grass);
@@ -97,7 +106,8 @@ public class Game{
 		towerA.setBackground(grass);
 		towerB.setBackground(grass);
 		heresGrass.setBackground(grass);
-		moreGrass.setBackground(grass);
+		wowGrass.setBackground(grass);
+		moreGrass.setBackground(dGrass);
 		interactRobot.setBackground(grass);
 		
 		defense.add(rw);
@@ -106,12 +116,15 @@ public class Game{
 		defense.add(moat);
 		tower.setBackground(grass);
 		tower.add(towerA);
-		tower.add(towers);
+		tower.add(towers);    
 		tower.add(towerB);
+		tower.add(towerC);
 		tdBuffer.setBackground(grass);
 		bufferA.setBackground(grass);
 		bufferA.add(heresGrass);
 		bufferA.add(interactRobot);
+		bufferA.add(wowGrass);
+		bufferA.add(moreGrass);
 		bufferB.setBackground(grass);
 		
 		interactRobot.addActionListener(new Listener());

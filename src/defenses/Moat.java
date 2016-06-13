@@ -26,7 +26,7 @@ public class Moat implements Defense{
 		}
 		else
 		{
-			System.out.println("Moat has been breached.");
+			//System.out.println("Moat has been breached.");
 			return true;
 		}
 	}
@@ -46,6 +46,12 @@ public class Moat implements Defense{
 		{
 			System.out.println("The moat cannot be damaged any further");
 		}
+	}
+	
+	public void reset()
+	{
+		strength = 2;
+		breached = false;
 	}
 	
 

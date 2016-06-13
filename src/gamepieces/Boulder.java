@@ -1,7 +1,5 @@
 package gamepieces;
 
-import mainclasses.Sprite;
-
 public class Boulder{
 	
 	private boolean isThrown;

@@ -66,8 +66,9 @@ public class Field {
 	
 	public boolean canBeCaptured()
 	{
-		//return getBreached() >= 3;
-		return dStrength <= 4;
+		System.out.println(getBreached());
+		return getBreached() >= 3;
+		//return dStrength <= 4;
 	}
 	
 	public int getBreached()
@@ -106,6 +107,35 @@ public class Field {
 	{
 		towerB++;
 		fieldB--;
+	}
+	
+	public void reset()
+	{
+		towerB = 0;
+		fieldB = 10;
+		for(int i = 0; i < 4; i++)
+		{
+			defenses.get(i).reset();
+		}
+	}
+	public boolean getNumBreached()
+	{
+		int numBreach = 0;
+		for(int i = 0; i < 4; i++)
+		{
+			if(defenses.get(i).getStrength() == 0)
+			{
+				numBreach++;
+			}
+		}
+		if(numBreach > 3)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 }

@@ -27,7 +27,7 @@ public class RockWall implements Defense{
 		}
 		else
 		{
-			System.out.println("Rock wall has been breached.");
+			//System.out.println("Rock wall has been breached.");
 			return true;
 		}
 	}
@@ -47,6 +47,12 @@ public class RockWall implements Defense{
 		{
 			System.out.println("The moat cannot be damaged any further");
 		}
+	}
+	
+	public void reset()
+	{
+		strength = 2;
+		breached = false;
 	}
 
 }

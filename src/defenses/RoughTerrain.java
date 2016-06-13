@@ -40,5 +40,11 @@ public class RoughTerrain implements Defense{
 			System.out.println("The rough terrain cannot be damaged any further");
 		}
 	}
+	
+	public void reset()
+	{
+		strength = 2;
+		breached = false;
+	}
 
 }

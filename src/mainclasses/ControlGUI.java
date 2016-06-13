@@ -21,12 +21,13 @@ import javax.swing.*;
 		private JButton defense;
 		private JPanel cardPanel;
 		private JPanel buttonPanel;
-		private JButton end;
+		private JButton end, reset;
 		private JLabel spaceB;
-		private int xLoc;
+		private int xLoc, yLoc, totalDamage;
 		private String hit;
 		private String miss;
 		private String moveError;
+		private boolean isEnded;
 		
 		Field field;
 		
@@ -43,13 +44,14 @@ import javax.swing.*;
 			boulder = new JButton("Throw Boulder");
 			defense = new JButton("Damage Defenses");
 			end = new JButton("End Game");
+			reset = new JButton("Reset Game");
 			spaceB = new JLabel();
 			frame.add(cardPanel);
 			frame.add(buttonPanel);
 			buttonPanel.setLayout(new GridLayout(2,4));
 			buttonPanel.add(end);
 			buttonPanel.add(up);
-			buttonPanel.add(spaceB);
+			buttonPanel.add(reset);
 			buttonPanel.add(boulder);
 			buttonPanel.add(left);
 			buttonPanel.add(down);
@@ -62,13 +64,16 @@ import javax.swing.*;
 			boulder.addActionListener(new Listener());
 			defense.addActionListener(new Listener());
 			end.addActionListener(new Listener());
+			//reset.addActionListener(new Listener());
 			buttonPanel.setVisible(true);
 			cardPanel.setVisible(true);
 			frame.setVisible(true);
 			
 			field = new Field();
 			
-			xLoc = 3;
+			xLoc = 2;
+			yLoc = 2;
+			totalDamage = 0;
 			hit = "The boulder hit the tower";
 			miss = "The boulder missed the tower";
 			moveError = "You cannot move any further";
@@ -92,29 +97,70 @@ import javax.swing.*;
 			return sFinal;
 		}
 		
+		public int totalDamage()
+		{
+			for(int i = 0; i < 4; i++)
+			{
+				totalDamage += field.defenses.get(i).getStrength();
+			}
+			return totalDamage;
+		}
+		
+		public void resetField()
+		{
+			xLoc = 3;
+			yLoc = 3;
+			totalDamage = 0;
+			field.reset();
+		}
+		
 		private class Listener implements ActionListener{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Object x = e.getSource();
 				if(x == left){
-					if(xLoc == 1)
+					if(xLoc == 0)
 					{
 						System.out.println(moveError);
 					}
 					else
 					{
 						xLoc--;
+						System.out.println("(" + xLoc + "," + yLoc + ")");
 					}
 				}
 				else if(x == right){
-					if(xLoc == 4)
+					if(xLoc == 3)
 					{
 						System.out.println(moveError);
 					}
 					else
 					{
 						xLoc++;
+						System.out.println("(" + xLoc + "," + yLoc + ")");
+					}
+				}
+				else if(x == up){
+					if(yLoc == 3)
+					{
+						System.out.println(moveError);
+					}
+					else
+					{
+						yLoc++;
+						System.out.println("(" + xLoc + "," + yLoc + ")");
+					}
+				}
+				else if(x == down){
+					if(yLoc == 0)
+					{
+						System.out.println(moveError);
+					}
+					else
+					{
+						yLoc--;
+						System.out.println("(" + xLoc + "," + yLoc + ")");
 					}
 				}
 				else if(x == boulder)
@@ -129,7 +175,7 @@ import javax.swing.*;
 						else
 						{System.out.println(miss);}
 					}
-					if(xLoc == 1)
+					if(xLoc == 0 && xLoc == 1)
 					{
 						if(r > 3)
 						{System.out.println(hit);
@@ -153,11 +199,13 @@ import javax.swing.*;
 				}
 					else if(x == defense)
 					{
-						if(xLoc == 2)
+						if(xLoc == 1)
 						{
-							System.out.println("The defenses have been damaged");
-							field.damage();
-						if(field.canBeCaptured())
+							String name = field.defenses.get(yLoc).getType();
+							//System.out.println("The defenses have been damaged");
+							field.defenses.get(yLoc).breach();
+							System.out.println("The " + name + " has been damaged!");
+						if(field.getNumBreached())
 						{
 							System.out.println("The tower can be captured!");
 						}
@@ -169,12 +217,25 @@ import javax.swing.*;
 				}
 					else if(x == end)
 					{
+						isEnded = true;
 						System.out.println();
 						System.out.println();
 						System.out.println("Game has been ended!");
-						System.out.println("Remaining defense strength: " + field.getStrength() + " out of 8");
-						System.out.println("Remaining tower strength: " + field.getTowerBoulder() + " out of 10");
+						System.out.println("Remaining defense strength: " + totalDamage() + " out of 8");
+						System.out.println("Remaining tower strength: " + (10 - field.getTowerBoulder()) + " out of 10");
 						System.out.println("Final score: " + finalScore());
+						/*for(int i = 0; i < 4; i++)
+						{
+							System.out.println(field.defenses.get(i).getType() + ": ");
+							if(field.defenses.get(i).isBreached())
+							{
+								System.out.print("Breached!");
+							}
+							else
+							{
+								System.out.print("Not breached!");
+							}
+						}*/
 						if(field.canBeCaptured())
 						{
 							System.out.println("The tower has been captured!");
@@ -184,6 +245,22 @@ import javax.swing.*;
 							System.out.println("The tower has not been captured!");
 						}
 					}
+					/*else if (x == reset)
+					{
+						if(isEnded)
+						{
+							for(int i = 0; i < 5; i++)
+							{
+								System.out.println();
+								field.reset();
+								resetField();
+							}
+						}
+						else
+						{
+							System.out.println("The game is in progress!");
+						}
+					}*/
 				
 			}
 			

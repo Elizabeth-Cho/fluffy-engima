@@ -6,5 +6,6 @@ public interface Defense {
 	boolean isBreached();
 	String getType();
 	void breach();
+	void reset();
 
 }

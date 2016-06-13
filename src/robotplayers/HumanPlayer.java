@@ -7,7 +7,6 @@ import javax.swing.ImageIcon;
 
 import gamepieces.Boulder;
 import interfaces.Robot;
-import mainclasses.Sprite;
 
 public class HumanPlayer implements Robot
 {
