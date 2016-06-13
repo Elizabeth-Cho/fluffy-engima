@@ -28,6 +28,7 @@ public class Game{
 	private JButton moat;
 	private JButton rt;
 	private JButton ramparts;
+	private JButton interactRobot;
 	private JPanel tower;
 	private JPanel tdBuffer;
 	private JPanel defense;
@@ -36,12 +37,14 @@ public class Game{
 	private JLabel towerA;
 	private JLabel towerB;
 	private JLabel towers;
+	private JLabel heresGrass;
+	private JLabel moreGrass;
 	private ImageIcon towerWall;
 	private ImageIcon bRW;
 	private ImageIcon bMoat;
 	private ImageIcon bRT;
 	private ImageIcon bRamparts;
-	private Robot robot;
+	private ImageIcon robot;
 	private Color grass;
 	private Graphics2D g2d;
 	
@@ -62,6 +65,7 @@ public class Game{
 		bRT = createImageIcon("/images/rough terrain.jpg", "rough terrain");
 		bRamparts = createImageIcon("/images/Ramparts.jpg", "ramparts");
 		towerWall = createImageIcon("/images/Tower.png", "tower");
+		robot = createImageIcon("/images/smol.png", "robit");
 		
 		frame.add(tower);
 		frame.add(tdBuffer);
@@ -72,15 +76,19 @@ public class Game{
 		
 		tower.setLayout(new GridLayout(3,1));
 		defense.setLayout(new GridLayout(4,1));
+		bufferA.setLayout(new GridLayout(3,1));
 		
 		rw = new JButton(bRW);
 		rt = new JButton(bRT);
 		ramparts = new JButton(bRamparts);
 		moat = new JButton(bMoat);
+		interactRobot = new JButton(robot);
 		
 		towerA = new JLabel(towerWall);
 		towers = new JLabel(towerWall);
 		towerB = new JLabel(towerWall);
+		heresGrass = new JLabel();
+		moreGrass = new JLabel();
 		
 		rw.setBackground(grass);
 		rt.setBackground(grass);
@@ -88,6 +96,9 @@ public class Game{
 		moat.setBackground(grass);
 		towerA.setBackground(grass);
 		towerB.setBackground(grass);
+		heresGrass.setBackground(grass);
+		moreGrass.setBackground(grass);
+		interactRobot.setBackground(grass);
 		
 		defense.add(rw);
 		defense.add(rt);
@@ -99,7 +110,11 @@ public class Game{
 		tower.add(towerB);
 		tdBuffer.setBackground(grass);
 		bufferA.setBackground(grass);
+		bufferA.add(heresGrass);
+		bufferA.add(interactRobot);
 		bufferB.setBackground(grass);
+		
+		interactRobot.addActionListener(new Listener());
 		
 		tower.setVisible(true);
 		tdBuffer.setVisible(true);
@@ -115,11 +130,21 @@ public class Game{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Object x = e.getSource();
-			if(x == rw){
-				System.out.println("hello");
-			}
-			else if(x == rt){
-				System.out.println("Hi");
+			if(x == interactRobot)
+			{
+				int r = (int)(Math.random()*10);
+				if(r >= 0 && r < 3)
+				{
+					System.out.println("Merely a robot");
+				}
+				else if(r >= 3 && r < 6)
+				{
+					System.out.println("Vroom vroom");
+				}
+				else if(r >= 6)
+				{
+					System.out.println("Capture that tower!");
+				}
 			}
 			
 		}
