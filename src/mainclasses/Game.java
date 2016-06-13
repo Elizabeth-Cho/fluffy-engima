@@ -78,9 +78,9 @@ public class Game{
 		ramparts = new JButton(bRamparts);
 		moat = new JButton(bMoat);
 		
-		towerA = new JLabel();
+		towerA = new JLabel(towerWall);
 		towers = new JLabel(towerWall);
-		towerB = new JLabel();
+		towerB = new JLabel(towerWall);
 		
 		rw.setBackground(grass);
 		rt.setBackground(grass);

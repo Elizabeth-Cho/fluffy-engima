@@ -96,20 +96,13 @@ public class GUITest {
 		movementPanel.add(up);
 		movementPanel.add(down);
 		movementPanel.add(left);
-		//movementPanel.add(right);
+		movementPanel.add(right);
 		up.addActionListener(new Listener());
 		down.addActionListener(new Listener());
 		left.addActionListener(new Listener());
-		//right.addActionListener(new Listener());
+		right.addActionListener(new Listener());
 		//horn.addActionListener(new Listener());
 		//pushit.addActionListener(new Listener());
-		
-		try {
-			BufferedImage image = ImageIO.read(new File("/images.jpg"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		buttonPanel.setVisible(true);
 		movementPanel.setVisible(true);

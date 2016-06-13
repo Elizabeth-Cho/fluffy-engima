@@ -17,6 +17,9 @@ public class Field {
 	Defense roughterrain;
 	Tower tower;
 	HumanPlayer person;
+	private int dStrength;
+	private int towerB;
+	private int fieldB;
 	
 	public Field()
 	{
@@ -36,6 +39,9 @@ public class Field {
 		defenses.add(rockwall);
 		defenses.add(roughterrain);	
 		tower = new Tower();
+		dStrength = 8;
+		towerB = 0;
+		fieldB = 10;
 	}
 	
 	public int getFieldBoulders()
@@ -60,8 +66,8 @@ public class Field {
 	
 	public boolean canBeCaptured()
 	{
-		
-		return getBreached() >= 3;
+		//return getBreached() >= 3;
+		return dStrength <= 4;
 	}
 	
 	public int getBreached()
@@ -75,6 +81,31 @@ public class Field {
 			}
 		}
 		return numBreached;
+	}
+	
+	public void damage()
+	{
+		dStrength--;
+	}
+	
+	public int getStrength()
+	{
+		return dStrength;
+	}
+	
+	public int getTowerBoulder()
+	{
+		return towerB;
+	}
+	
+	public int getFieldBoulder()
+	{
+		return fieldB;
+	}
+	public void hit()
+	{
+		towerB++;
+		fieldB--;
 	}
 
 }

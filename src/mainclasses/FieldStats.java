@@ -19,10 +19,10 @@ public class FieldStats {
 	public FieldStats()
 	{
 		field = new Field();
-		numBoulders = field.getFieldBoulders() + field.getTowerBoulders() + field.getRobotBoulders();
+		/*numBoulders = field.getFieldBoulders() + field.getTowerBoulders() + field.getRobotBoulders();
 		towerStrength = field.tower.getStrength();
 		towerBoulder = field.getTowerBoulders();
-		fieldBoulder = field.getFieldBoulders();
+		fieldBoulder = field.getFieldBoulders();*/
 	}
 	
 	public int getNumBoulder()
